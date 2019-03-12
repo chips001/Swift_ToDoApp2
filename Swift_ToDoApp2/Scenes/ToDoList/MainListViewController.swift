@@ -21,7 +21,7 @@ class MainListViewController: UIViewController {
         if let storedToDoList = userDefaults.object(forKey: "todolist") as? Data,
             let unarchiveTodoList = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(storedToDoList) as? [Todo],
             let unarchivedTodoList = unarchiveTodoList {
-            todoList.append(contentsOf: unarchivedTodoList)
+            self.todoList.append(contentsOf: unarchivedTodoList)
         }
     }
     
